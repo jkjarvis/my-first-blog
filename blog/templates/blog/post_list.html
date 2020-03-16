@@ -15,10 +15,12 @@
             <p>Just some rndom line for testing</p>
         </div>
 
-        <div>
-            <p>published: 16.03.2020, 15:55</p>
-            <h2><a href="">My second post</a></h2>
-            <p>One more random line for testing</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
